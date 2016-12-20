@@ -24,8 +24,8 @@ class Recipe extends Component {
     onBtnClick = () => {
 
         // this is where the magic happens
-        // we pass in our service, our action, and out payload
-        // and then nameless calls the service we set up on the server
+        // we pass in our service, our action, and our payload
+        // and then Nameless calls the service we set up on the server
         this.nameless.exec('recipes', ACTIONS.UPDATE_RECIPE, { id: 1 })
             .then(data => {
 
