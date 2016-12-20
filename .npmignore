@@ -2,3 +2,5 @@ src
 webpack.config.js
 node_scripts
 build
+client.js
+server.js
