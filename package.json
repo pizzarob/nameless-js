@@ -1,6 +1,6 @@
 {
   "name": "nameless-js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./client.js",
   "description": "Nameless is a utility that allows actions to be dispatched from the client that will trigger server side functionality. Useful for updating data on the server using things like Redux.",
   "scripts": {
