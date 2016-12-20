@@ -108,7 +108,7 @@ const { commander, apiPrefix } = setupNameless(app);
 
 app.use((req, res, next) => {
 
-    // We can use the commander to fetch recipers server side
+    // We can use the commander to fetch recipes server side
     // before we render our app.
 
     // Here 'recipes' is our service we defined and we want to dispatch the GET_ALL_RECIPES action
