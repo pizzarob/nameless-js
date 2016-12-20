@@ -66,8 +66,9 @@ const recipes = createService('recipes', {
 
     [ACTIONS.UPDATE_RECIPE](payload, resolve, reject) {
 
-        // We can use the payload object to sent data to our services from the client.
+        // We can use the payload object to send data to our services from the client.
         const { id, body } = payload;
+
         // Now we can use the id from the payload to update something in the database
 
         // Once our update is complete we can pass whatever we want to resolve which will be
@@ -85,7 +86,7 @@ export default [ recipes ];
 
 ### Making It Work With Express
 
-Now that we have Nameless set up to work with the server here's an example of how you could set it up.
+Now that we have Nameless configured here's an example of how you could set it up with your server.
 
 ```js
 import express from 'express';
