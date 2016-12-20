@@ -12,6 +12,7 @@ const server = {
     output: {
         path: './build',
         filename: '[name].js',
+        libraryTarget: 'umd'
     },
     target: 'node',
     devtool: 'source-map',
@@ -45,6 +46,7 @@ const client = {
     output: {
         path: './build',
         filename: '[name].js',
+        libraryTarget: 'umd'
     },
     devtool: 'source-map',
     debug: true,

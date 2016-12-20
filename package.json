@@ -13,6 +13,8 @@
   "dependencies": {
     "body-parser": "^1.15.2"
   },
+  "jsnext:main": "./",
+  "module": "./",
   "devDependencies": {
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
