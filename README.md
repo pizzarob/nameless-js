@@ -20,6 +20,6 @@ nameless.exec('jobs', actions.FILTER_JOBS, { /* filters */ }).then(data => /* do
 
 ## Getting Started
 
-The first thing you will want to do is [get Nameless working with your server](read/server.md)
+The first thing you will want to do is [get Nameless working with your server](https://github.com/realseanp/nameless-js/blob/dev/read/server.md)
 
 
