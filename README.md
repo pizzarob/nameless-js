@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/realseanp/nameless-js.svg?branch=dev)](https://travis-ci.org/realseanp/nameless-js)
+[![Build Status](https://travis-ci.org/realseanp/nameless-js.svg?branch=master)](https://travis-ci.org/realseanp/nameless-js)
 
 # Nameless JS
 
