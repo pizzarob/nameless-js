@@ -4,7 +4,7 @@
   "main": "./client.js",
   "description": "Nameless is a utility that allows actions to be dispatched from the client that will trigger server side functionality. Useful for updating data on the server using things like Redux.",
   "scripts": {
-    "test": "mocha tests",
+    "test": "./node_modules/.bin/mocha tests",
     "build": "node ./node_scripts/run-build.js",
     "prepublish": "npm run build"
   },
@@ -24,6 +24,7 @@
     "babel-register": "^6.18.0",
     "chai": "^3.5.0",
     "express": "^4.14.0",
+    "mocha": "^3.2.0",
     "webpack": "^1.14.0",
     "webpack-node-externals": "^1.5.4"
   },
