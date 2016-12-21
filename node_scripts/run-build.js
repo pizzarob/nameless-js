@@ -7,9 +7,6 @@ const configs = config.map(obj => Object.assign({}, obj, {
     output: Object.assign({}, obj.output, { path: './' })
 }));
 
-console.log(configs);
-
-
 const compiler = webpack(configs);
 
 compiler.run((err, stats) => {
