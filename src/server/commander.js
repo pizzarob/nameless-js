@@ -19,7 +19,6 @@ function commander(services = []) {
     });
 
     function execute(service, action, payload) {
-        console.log(action, service, payload);
         try {
             return obj[service][action](payload);
         } catch (e) {
