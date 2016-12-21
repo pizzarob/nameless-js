@@ -77,4 +77,4 @@ import nameless from 'nameless-js';
 
 `Object` - An object containing the `exec` method
 
-- `exec(serviceName = String, actionName = String)`
+- `exec(serviceName = String, actionName = String, payload)`
