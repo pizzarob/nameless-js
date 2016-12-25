@@ -113,6 +113,8 @@ app.use((req, res, next) => {
     // before we render our app.
 
     // Here 'recipes' is our service we defined and we want to dispatch the GET_ALL_RECIPES action
+
+    // This is one way of getting data before rendering you app.
     commander.exec('recipes', ACTIONS.GET_ALL_RECIPES).then(recipes => {
         // render app
     });

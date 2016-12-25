@@ -54,14 +54,14 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 0 */
 /***/ function(module, exports) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
 	var createExecuteFn = function createExecuteFn(apiPrefix) {
 	    return function (service, action, payload) {
-	        return new Promise(function (resolve, reject) {
+	        return typeof window === 'undefined' && typeof global !== 'undefined' && global.nameless instanceof Object ? global.nameless.exec(service, action, payload) : new Promise(function (resolve, reject) {
 	            var xhr = new XMLHttpRequest();
 	            xhr.open('post', apiPrefix + '/' + service);
 	            xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
@@ -90,6 +90,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	exports.default = namelessClient;
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }
 /******/ ])

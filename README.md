@@ -1,8 +1,8 @@
 [![Build Status](https://travis-ci.org/realseanp/nameless-js.svg?branch=master)](https://travis-ci.org/realseanp/nameless-js)
 
-# Nameless JS
+# Nameless JS - Isomorphic Client/Server Communication
 
-Nameless is a utility that tries to make server/client communication easier. We dispatch actions to the server via XHR requests that do things we tell them to do then the server responds back to the client with whatever we tell it to send.
+Nameless is a utility that tries to make server/client communication easier. Built for isomorphic apps, Nameless dispatches actions from the client and the server the same way. These actions are tied to methods set up server-side. So when actions are dispatched we can interact with databases (or do other async stuff) and send data back to the client.
 
 Nameless was initially built to be used with a Redux app, but you can use it any way you see fit!
 
@@ -14,7 +14,7 @@ import namelessClient from 'nameless-js';
 import namelessServer, { createService } from 'nameless-js/server';
 ```
 
-A client side call to the server might look like:
+A client side call to the server might look like. If this function is called server side you will get the same results.
 
 ```js
 nameless.exec('jobs', actions.FILTER_JOBS, { /* filters */ }).then(data => /* do something with data. update store ? */ )));
