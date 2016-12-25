@@ -21,11 +21,24 @@ class Recipe extends Component {
         this.nameless = Nameless('/api');
     }
 
+    // if you have an isomorphic app you can call the nameless.exec function within
+    // componentWillMount and it will be called server-side, before your app is rendered
+    // when called on the server our service methods will be called directly.
+    componentWillMount() {
+        this.nameless.exec('recipes', ACTIONS.UPDATE_RECIPE, { id: 1 })
+            .then(data => {
+
+                // do something with data
+            });
+    }
+
     onBtnClick = () => {
 
         // this is where the magic happens
         // we pass in our service, our action, and our payload
         // and then Nameless calls the service we set up on the server
+
+        // when called client side this will send an XHR request
         this.nameless.exec('recipes', ACTIONS.UPDATE_RECIPE, { id: 1 })
             .then(data => {
 

@@ -2,7 +2,7 @@
 
 # Nameless JS - Isomorphic Client/Server Communication
 
-Nameless is a utility that tries to make server/client communication easier. We dispatch actions to the server via XHR requests that do things we tell them to do then the server responds back to the client with whatever we tell it to send.
+Nameless is a utility that tries to make server/client communication easier. Built for isomorphic apps, Nameless dispatches actions from the client and the server the same way. These actions are tied to methods set up server-side. So when actions are dispatched we can interact with databases (or do other async stuff) and send data back to the client.
 
 Nameless was initially built to be used with a Redux app, but you can use it any way you see fit!
 
