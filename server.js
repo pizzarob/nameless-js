@@ -101,6 +101,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var commander = (0, _commander2.default)(services);
 	    app.post(apiPrefix + '/:service', _bodyParser2.default.urlencoded({ extended: false }), _bodyParser2.default.json(), handleRoute(commander));
 
+	    global.nameless = {
+	        exec: commander.exec
+	    };
+
 	    return { commander: commander, apiPrefix: apiPrefix };
 	}
 

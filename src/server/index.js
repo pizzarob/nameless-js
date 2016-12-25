@@ -14,6 +14,10 @@ function nameless({ apiPrefix = '', services = []}, app) {
     const commander = Commander(services);
     app.post(`${apiPrefix}/:service`, bodyParser.urlencoded({ extended: false }), bodyParser.json(), handleRoute(commander));
 
+    global.nameless = {
+        exec: commander.exec
+    };
+
     return { commander, apiPrefix };
 }
 
