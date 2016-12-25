@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/realseanp/nameless-js.svg?branch=dev)](https://travis-ci.org/realseanp/nameless-js)
 
-# Nameless JS
+# Nameless JS - Isomorphic Client/Server Communication
 
 Nameless is a utility that tries to make server/client communication easier. We dispatch actions to the server via XHR requests that do things we tell them to do then the server responds back to the client with whatever we tell it to send.
 
@@ -14,7 +14,7 @@ import namelessClient from 'nameless-js';
 import namelessServer, { createService } from 'nameless-js/server';
 ```
 
-A client side call to the server might look like:
+A client side call to the server might look like. If this function is called server side you will get the same results.
 
 ```js
 nameless.exec('jobs', actions.FILTER_JOBS, { /* filters */ }).then(data => /* do something with data. update store ? */ )));
