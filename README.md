@@ -10,7 +10,7 @@ Nameless was initially built to be used with a Redux app, but you can use it any
 npm i --save nameless-js
 ```
 ```bash
-import namelessClient from 'nameless-js';
+import namelessClient from 'nameless-js/client';
 import namelessServer, { createService } from 'nameless-js/server';
 ```
 

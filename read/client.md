@@ -7,7 +7,7 @@ Here's an example of Nameless in a React component that could update one of our 
 
 ```js
 import React, { Component } from 'react';
-import Nameless from 'nameless-js';
+import Nameless from 'nameless-js/client';
 
 class Recipe extends Component {
     constructor() {
