@@ -1,9 +1,11 @@
 const webpack = require('webpack');
 const config = require('../webpack.config.js');
 const configs = config.map(obj => Object.assign({}, obj, {
-    debug: false,
-    devtool: null,
-    plugins: [],
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            compress: true,
+        }),
+    ],
     output: Object.assign({}, obj.output, { path: './' })
 }));
 

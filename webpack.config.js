@@ -15,26 +15,20 @@ const server = {
         libraryTarget: 'umd'
     },
     target: 'node',
-    devtool: 'source-map',
-    debug: true,
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
-                loader: 'babel',
+                loader: 'babel-loader',
                 exclude: /node_modules/,
-                query: {
+                options: {
                     presets: ['es2015', 'stage-2']
                 }
             },
-            {
-                test: /\.json?$/,
-                loader: 'json',
-            }
         ]
     },
     plugins: [
-         new webpack.BannerPlugin('require("source-map-support").install();', { raw: true, entryOnly: false })
+         new webpack.BannerPlugin({banner: 'require("source-map-support").install();', raw: true, entryOnly: false })
     ],
     externals: [nodeExternals({})],
 }
@@ -48,20 +42,13 @@ const client = {
         filename: '[name].js',
         libraryTarget: 'umd'
     },
-    devtool: 'source-map',
-    debug: true,
-    plugins: [
-        // new CopyWebpackPlugin([
-        //     { from: './src/assets/fonts', to: 'fonts' },
-        // ])
-    ],
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
-                loader: 'babel',
+                loader: 'babel-loader',
                 exclude: /node_modules/,
-                query: {
+                options: {
                     presets: ['es2015', 'stage-2']
                 }
             },
