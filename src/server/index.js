@@ -4,10 +4,10 @@ import Commander from './commander';
 const createService = (name, services) => ({ name, services });
 
 const promiseResolve = res => data => res.json(data)
-const promiseReject = next => e => next(e);
+const promiseReject = res => e => res.status(e.code || 500).send(e.message || '');
 
 const handleRoute = commander => (req, res, next) => {
-    commander.exec(req.params.service, req.body.action, req.body.payload).then(promiseResolve(res), promiseReject(next)).catch(promiseReject(next));
+    commander.exec(req.params.service, req.body.action, req.body.payload).then(promiseResolve(res), promiseReject(res)).catch(promiseReject(res));
 };
 
 function nameless({ apiPrefix = '', services = []}, app) {
