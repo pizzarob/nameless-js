@@ -1,5 +1,5 @@
-const createActionFunc = fn => (payload, req, res) => new Promise((resolve, reject) => {
-    fn(payload, resolve, reject, req, res);
+const createActionFunc = fn => (payload, req, res, next) => new Promise((resolve, reject) => {
+    fn(payload, resolve, reject, req, res, next);
 });
 
 
@@ -18,9 +18,9 @@ function commander(services = []) {
 
     });
 
-    function execute(service, action, payload, req, res) {
+    function execute(service, action, payload, req, res, next) {
         try {
-            return obj[service][action](payload, req, res);
+            return obj[service][action](payload, req, res, next);
         } catch (e) {
             return Promise.reject(e);
         }

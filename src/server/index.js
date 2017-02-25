@@ -7,7 +7,7 @@ const promiseResolve = res => data => res.json(data)
 const promiseReject = res => e => res.status(e.code || 500).send(e.message || '');
 
 const handleRoute = commander => (req, res, next) => {
-    commander.exec(req.params.service, req.body.action, req.body.payload).then(promiseResolve(res), promiseReject(res)).catch(promiseReject(res));
+    commander.exec(req.params.service, req.body.action, req.body.payload, req, res, next).then(promiseResolve(res), promiseReject(res)).catch(promiseReject(res));
 };
 
 function nameless({ apiPrefix = '', services = []}, app) {
