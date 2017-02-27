@@ -48,23 +48,34 @@ const recipes = createService('recipes', {
 
     // the name of our service methods is that of our actions
     // each service method receives 3 arguments which are
-    // payload, resolve, and reject.
+    // payload, resolve, and reject. The route request, response, and next arguments
+    // are also passed to these methods in case you need to use them.
 
     // Service methods are promises and it is up to you to
     // call the resolve or reject methods. Data passed into
     // the resolve method will be sent back to the client.
-    [ACTIONS.GET_ALL_RECIPES](payload, resolve, reject) {
+    [ACTIONS.GET_ALL_RECIPES](payload, resolve, reject, req, res, next) {
 
         // Here we could make a call to our database to get
         // all of our recipes.
 
         // Once the data has arrived we can pass it to resolve
-        // and it will be sent back to the client
-        const data = {};
-        resolve(data);
+        // and it will be sent back to the client.
+        // Calling reject with an object with properties code and message will handle errors.
+
+        if(error) {
+            reject({
+                code: 400,
+                message: 'Bad request',
+            });
+        } else {
+            const data = {};
+            resolve(data);
+        }
+
     },
 
-    [ACTIONS.UPDATE_RECIPE](payload, resolve, reject) {
+    [ACTIONS.UPDATE_RECIPE](payload, resolve, reject, req, res, next) {
 
         // We can use the payload object to send data to our services from the client.
         const { id, body } = payload;
