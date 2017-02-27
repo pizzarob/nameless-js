@@ -54,5 +54,20 @@ class Recipe extends Component {
         )
     }
 }
-
 ```
+
+It works especially great if you are using redux saga! Here's an example
+
+```js
+function* loginSaga({ payload: { email, password } }) {
+  try {
+    const { success } = yield nameless.exec('user', constants.AUTHENTICATE_USER, { email, password });
+    if (success) {
+      const userDetails = yield nameless.exec('user', constants.GET_USER_DATA);
+    }
+  } catch (e) {
+    console.log('ERROR', e);
+  }
+}
+```
+

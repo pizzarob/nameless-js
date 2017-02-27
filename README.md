@@ -22,7 +22,7 @@ nameless.exec('jobs', actions.FILTER_JOBS, { /* filters */ }).then(data => /* do
 
 ## Getting Started
 
-The first thing you will want to do is [get Nameless working with your server](https://github.com/realseanp/nameless-js/blob/dev/read/server.md)
+The first thing you will want to do is [get Nameless working with your server](https://github.com/realseanp/nameless-js/blob/master/read/server.md)
 
 
 ## Api
@@ -61,7 +61,25 @@ import nameless, { createService } from 'nameless-js/server';
 
 `actions` - Object - An object containing action methods.
 
-- `[ACTION_METHOD_NAME](payload, resolve, reject)` - Function that will be executed when action correlating to this functions name is executed.
+- `[ACTION_METHOD_NAME](payload, resolve, reject, req, res, next)` - Function that will be executed when action correlating to this functions name is executed.
+
+#### Error Handling On The Server
+
+To return an error from your server-side functions simply reject the promise and pass in an object with the properties `code` and `message`.
+
+```js
+  [ACTION_METHOD_NAME](payload, resolve, reject, req, res, next) {
+    // do something
+    // ...
+    // ...
+    if(error) {
+      reject({
+        code: 400,
+        message: 'Bad request',
+      });
+    }
+  }
+```
 
 ### Client
 
